@@ -11,6 +11,16 @@
   Comando para iniciar um porjeto vue js 
   - vue create <nome do projeto>
 
+  Estrutura 
+  pastas 
+  - public -> fica a pagina html que mostra a tela do framework ao icone que parece na aba da pagina 
+  - src -> recurssos da aplicação como a pasta de assets que cointem imagens que são exibidas na view principal
+           componentes que contem os objetos qque aparecem na tela as configurações css eo arquivo main que seleciona 
+           a view app do html e coloca os componetes nela 
+  - Babel é um conversor que traduz o js velho para o js novo para evitar problemas de compatibilidade 
+  
+
+
 
 
 
