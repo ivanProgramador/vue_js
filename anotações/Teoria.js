@@ -28,8 +28,64 @@
 
   Por isso uma SPA não dá ao ususario a sensação de estar usando um aplicativo porque mesmo atualizando as informações,
   a apgnia não sofre um refresh.  
+
+  Dica: Oaruivo do componte deve ter dois nomes separados por ifen por exemplo:
   
+  Cliente-component
+
+  Porém na hora de referenciar ele no app.vue a averiavel que recebe a importação tem que ser sem ifem por exemplo:
+
+  import ClienteComponent from './components/Cliente-component.vue';
+
+  se não for dessa forma o vue vai travar
   
+  O codigo abaixo é um componente basico ja com o css pronto
+  ----------------------------------------------------------------------
+  
+<!--Um componente e dividido em 3 partes 
+   template -> parte que vai ser mostrada 
+   script   -> lógica do componente
+   style    -> estilo do componente
+
+   para retornar mais de uma tag html dentro de um componte 
+   é necessário criar uma div principal para colocar os elemntos dentro 
+-->
+
+<template>
+   <div id="cliente">
+      <h2 id="cliente-nome" >Cliente aqui</h2>
+      <h2>Descrição do cliente: teste teste</h2>
+      
+   </div>
+ 
+</template>
+
+<script>
+export default{
+
+}
+
+</script>
+
+<style scoped>
+
+    #cliente{
+        color: green;
+        background-color: black;
+        max-width: 600px;
+        height: 120px;
+    }
+
+    #cliente-nome{
+       color: white;
+    }
+
+ 
+
+</style>
+---------------------------------------------------------------------
+
+
   
 
 
