@@ -18,6 +18,18 @@
            componentes que contem os objetos qque aparecem na tela as configurações css eo arquivo main que seleciona 
            a view app do html e coloca os componetes nela 
   - Babel é um conversor que traduz o js velho para o js novo para evitar problemas de compatibilidade 
+
+  Componentes 
+
+  Um componete é basicamente uma função js que retorna um elemento que pode ser uma div, um formulario, um menu,
+  cada componente tem sua própria função e estilo então isso torna esse elemento totalmente independente dos outros,
+  então se houver alguma alteração referente ao contêudo deste comeponente somente ele será afetado sem que os outros
+  elementos presentes na página sejam recarregados.
+
+  Por isso uma SPA não dá ao ususario a sensação de estar usando um aplicativo porque mesmo atualizando as informações,
+  a apgnia não sofre um refresh.  
+  
+  
   
 
 
