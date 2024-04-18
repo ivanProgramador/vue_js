@@ -85,7 +85,16 @@ export default{
 </style>
 ---------------------------------------------------------------------
 
+Reatividade 
 
+  No caso oque classfica um framwork como reativo e a capacidade dele de detectar 
+  as mudanças nos dados exibidos e fazer essas alaterações imediatamente sem que o cliente 
+  precise ataualizar a pagina para ter acesso a essas atualizações.
+  
+  Usando um exemplo mais comun, a Netflx quando mostra um filme lanlçamento na pagina,
+  se ele foi lançado enquanto o cliente esta vendo outros titulos no catalogo ele vai
+  aparecer na lista para o cliente porém issoi é feito sem que o restante ada pagina 
+  precise sofrer um recarregamento para atualizar o anuncio do novo titulo.
   
 
 

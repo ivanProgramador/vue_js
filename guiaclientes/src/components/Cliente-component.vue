@@ -1,10 +1,14 @@
 
-
-
 <template>
    <div id="cliente">
-      <h2 id="cliente-nome" >Cliente aqui</h2>
-      <h2>Descrição do cliente: teste teste</h2>
+      <h2 id="cliente-titulo" >Ficha cliente</h2>
+      <h2>
+         <p>Nome:     {{ nome      }}</p>
+         <p>Numero:   {{ numero    }}</p>
+         <p>E-mail:   {{ email     }}</p>
+         <p>Idade:    {{ idade     }}</p>
+         <p>Descrição:{{ descricao }}</p>
+      </h2>
       
    </div>
  
@@ -13,6 +17,16 @@
 <script>
 export default{
 
+   data(){
+      return{
+         nome:'José Silva',
+         numero:'123456',
+         email:'jose@gmail.com',
+         idade:35,
+         descricao:'Cliente premium'
+      }
+   }
+
 }
 
 </script>
@@ -20,13 +34,18 @@ export default{
 <style scoped>
 
     #cliente{
-        color: green;
-        background-color: black;
-        max-width: 600px;
-        height: 120px;
+        color: rgb(237, 241, 237);
+        background-color: rgb(112, 114, 243);
+        max-width: 20%;
+        height: auto;
+        padding-left: 2%;
+        padding-bottom: 2%;
+        padding-top:2%;
+        border-radius: 3%;
+        box-sizing: border-box;
     }
 
-    #cliente-nome{
+    #cliente-titulo{
        color: white;
     }
 
