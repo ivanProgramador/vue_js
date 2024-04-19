@@ -3,7 +3,7 @@
    <div id="cliente">
       <h2 id="cliente-titulo" >Ficha cliente</h2>
 
-      <input type="text" :value="nome">
+      <input type="text" v-model="nome">
       <h2>
          <p>Nome:     {{ nome      }}</p>
          <p>Numero:   {{ numero    }}</p>

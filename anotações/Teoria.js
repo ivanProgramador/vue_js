@@ -127,6 +127,39 @@ Reatividade
 O motivo de chamar isso de One way data-binding e porque se eu tentar alterar o valor do campo 
 nada aconetce com o valor d varivel nome porque ele so recebe o valor ele não pode enviar valores 
 por isso One way.
+
+Two way data-binding 
+
+É uma situação onde tanto o input recebe valor quanto ele envia isso faz com que o valor da varivel 
+mude de forma sincronizada 
+com a sintaxe abaxo o input ficaligado a varivel nome então o valor dela muda conforme eu edito o valor
+qua eu tenho no campo 
+
+ <input type="text" v-model ="nome">
+
+
+ <script>
+      export default{
+
+         data(){
+            return{
+               nome:'José Silva',
+               numero:'123456',
+               email:'jose@gmail.com',
+               idade:35,
+               descricao:'Cliente premium'
+            }
+         }
+
+      }
+
+</script>
+
+------------------------------------------------------------
+
+
+
+
   
   
 
