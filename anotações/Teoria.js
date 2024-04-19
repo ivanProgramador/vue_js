@@ -93,8 +93,44 @@ Reatividade
   
   Usando um exemplo mais comun, a Netflx quando mostra um filme lanlçamento na pagina,
   se ele foi lançado enquanto o cliente esta vendo outros titulos no catalogo ele vai
-  aparecer na lista para o cliente porém issoi é feito sem que o restante ada pagina 
+  aparecer na lista para o cliente porém isso é feito sem que o restante da pagina 
   precise sofrer um recarregamento para atualizar o anuncio do novo titulo.
+
+  One way data-binding
+
+  Esse recurso liga os atributos a um input ou outro elemento pelo value por exemplo
+  se eu tenho os dados atuais de um cliente e deseja mostra-los dentro de um input eu 
+  posso usar a sintaxe abaixo onde ue coloco ' : ' atras do atributo value e dentro dele eu escrevo 
+  o ome d varivel que possui o atributo que eu deseja colocar no value do input.
+
+  <input type="text" :value="nome">
+
+  Então o input acima vai receber em seu valor o nome José Silva que seria o valor da variavel nome 
+
+  <script>
+      export default{
+
+         data(){
+            return{
+               nome:'José Silva',
+               numero:'123456',
+               email:'jose@gmail.com',
+               idade:35,
+               descricao:'Cliente premium'
+            }
+         }
+
+      }
+
+</script>
+
+O motivo de chamar isso de One way data-binding e porque se eu tentar alterar o valor do campo 
+nada aconetce com o valor d varivel nome porque ele so recebe o valor ele não pode enviar valores 
+por isso One way.
+  
+  
+
+
   
 
 
