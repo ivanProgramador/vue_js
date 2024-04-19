@@ -3,7 +3,10 @@
 
   <h1>Guia clientes</h1>
   <hr>
-  <ClienteComponent/>
+      <ClienteComponent nome="Ana Silva" email="ana@teste.com" numero=3 />
+      <ClienteComponent nome="Bruna Maria" email="bruna@teste.com" numero=2 />
+      <ClienteComponent nome="Camila Oliveira" email="camila@teste.com" numero=1 />
+
 
   
 

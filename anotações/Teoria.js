@@ -157,6 +157,50 @@ qua eu tenho no campo
 
 ------------------------------------------------------------
 
+Props
+ São atributos que sereferem a ada objeto de foma exclusiva, por exemplo se cada componete representa um cliente,
+ eu posso ter uma pro chamada nome e se eu tiver 3 clientes eu posso aplicar um noem para cada sem que a composição 
+ dos dados seja afetada.
+ 
+ por exemplo aqui eu criei um componente para cada cliente e cada cliente tem seus proprios dados 
+
+   <ClienteComponent nome="Ana Silva" email="ana@teste.com" numero=3 />
+   <ClienteComponent nome="Bruna Maria" email="bruna@teste.com" numero=2 />
+   <ClienteComponent nome="Camila Oliveira" email="camila@teste.com" numero=1 />
+
+recebendo os dados das props dentro da função exposrt default eu declaro um objeto chamdo porps 
+e dentro dele ele recebe os atributos acada um com o seu tipo de dado, ou seja e nesse objeto onde os dados 
+que eu coloco nas porps são guardados e asim cada vez que um elemento novo e gerado ele fica totalemnte independe
+e editavel.
+
+ <script>
+      export default{
+
+         data(){
+            return{
+            
+               idade:35,
+               descricao:'Cliente premium'
+            }
+         },
+         props:{
+            nome: String,
+            numero: Number,
+            email: String,
+            
+
+         }
+
+      }
+
+</script>
+
+
+
+
+
+
+
 
 
 
