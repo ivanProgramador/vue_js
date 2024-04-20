@@ -3,7 +3,7 @@
 
   <h1>Guia clientes</h1>
   <hr>
-  <ClienteComponent :cliente="cliente"/>
+  <ClienteComponent :cliente="cliente" :showIdade="false" />
 
   
 

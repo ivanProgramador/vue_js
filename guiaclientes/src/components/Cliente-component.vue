@@ -5,7 +5,8 @@
       <h2>
          <p>Nome:  {{ cliente.nome     }}</p>
          <p>E-mail:{{ cliente.email   }}</p>
-         <p>Idade: {{ cliente.idade    }}</p>
+         <p v-if="showIdade == true"> Idade: {{ cliente.idade    }}</p>
+         <p v-else> Esse cliente escondeu a idade </p>
         
       </h2>
       
@@ -21,10 +22,8 @@ export default{
       }
    },
    props:{
-       nome: String,
-       idade: Number,
-       email: String,
-       cliente:Object
+       cliente:Object,
+       showIdade: Boolean
    }
 
 }
