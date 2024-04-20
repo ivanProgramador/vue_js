@@ -95,57 +95,107 @@ Reatividade
   se ele foi lançado enquanto o cliente esta vendo outros titulos no catalogo ele vai
   aparecer na lista para o cliente porém isso é feito sem que o restante ada pagina 
   precise sofrer um recarregamento para atualizar o anuncio do novo titulo.
-  
 
-  Props 
-  São variaveis que estão ligadas a composição default do componente como se fosse traibutos de uma classe,
-  digamos que eu crio um componente na view para cada cliente esse componente pode ter props baseadas no
-  cliente como nome, telefone e email, então nesse caso todos so clientes vaõ ter esses atributos mas nem 
-  todo o cliente usa o mesmo nome email ouu telefone, então ovalor das porps vai mudar conforme os dados do clinte
-  em questão.
+  One way data-binding
 
-  as porps são declaradas dentro da parte de script de um componente quando se delara uma prop,
-  temos que informar que tipo de dado essa porps espera receber 
-  nome recebe -> string  , telefone receber -> Number ....
+  Esse recurso liga os atributos a um input ou outro elemento pelo value por exemplo
+  se eu tenho os dados atuais de um cliente e deseja mostra-los dentro de um input eu 
+  posso usar a sintaxe abaixo onde ue coloco ' : ' atras do atributo value e dentro dele eu escrevo 
+  o ome d varivel que possui o atributo que eu deseja colocar no value do input.
 
-  é importante sempre respeitar o tipo de dado recebido por cada prop 
-  
-  
-  -----------------------------------------------------------
-    props:{
-            nome: String,
-            telefone: Number,
-            email: String
-         }  
-   -----------------------------------------------------------
+  <input type="text" :value="nome">
 
-   enviando valores para props nesse caso o componete cliente esta recebendo os
-   valores das props de forma direta mas existem jeitos melhores de se fazer isso    
-   
-   <ClienteComponent nome="José" email="jose@teste.com.br" telefone=33763375 />
-
-   O codigo abaio mostra como declarar porps dentro do componente
+  Então o input acima vai receber em seu valor o nome José Silva que seria o valor da variavel nome 
 
   <script>
       export default{
 
          data(){
             return{
+               nome:'José Silva',
+               numero:'123456',
+               email:'jose@gmail.com',
                idade:35,
                descricao:'Cliente premium'
             }
-         },
-         props:{
-            nome: String,
-            telefone: Number,
-            email: String
          }
 
       }
 
 </script>
 
--------------------------------------------------------------------------
+O motivo de chamar isso de One way data-binding e porque se eu tentar alterar o valor do campo 
+nada aconetce com o valor d varivel nome porque ele so recebe o valor ele não pode enviar valores 
+por isso One way.
+
+Two way data-binding 
+
+É uma situação onde tanto o input recebe valor quanto ele envia isso faz com que o valor da varivel 
+mude de forma sincronizada 
+com a sintaxe abaxo o input ficaligado a varivel nome então o valor dela muda conforme eu edito o valor
+qua eu tenho no campo 
+
+ <input type="text" v-model ="nome">
+
+
+ <script>
+      export default{
+
+         data(){
+            return{
+               nome:'José Silva',
+               numero:'123456',
+               email:'jose@gmail.com',
+               idade:35,
+               descricao:'Cliente premium'
+            }
+         }
+
+      }
+
+</script>
+
+------------------------------------------------------------
+
+Props
+ São atributos que sereferem a ada objeto de foma exclusiva, por exemplo se cada componete representa um cliente,
+ eu posso ter uma pro chamada nome e se eu tiver 3 clientes eu posso aplicar um noem para cada sem que a composição 
+ dos dados seja afetada.
+ 
+ por exemplo aqui eu criei um componente para cada cliente e cada cliente tem seus proprios dados 
+
+   <ClienteComponent nome="Ana Silva" email="ana@teste.com" numero=3 />
+   <ClienteComponent nome="Bruna Maria" email="bruna@teste.com" numero=2 />
+   <ClienteComponent nome="Camila Oliveira" email="camila@teste.com" numero=1 />
+
+recebendo os dados das props dentro da função exposrt default eu declaro um objeto chamdo porps 
+e dentro dele ele recebe os atributos acada um com o seu tipo de dado, ou seja e nesse objeto onde os dados 
+que eu coloco nas porps são guardados e asim cada vez que um elemento novo e gerado ele fica totalemnte independe
+e editavel.
+
+ <script>
+      export default{
+
+         data(){
+            return{
+            
+               idade:35,
+               descricao:'Cliente premium'
+            }
+         },
+         props:{
+            nome: String,
+            numero: Number,
+            email: String,
+            
+
+         }
+
+      }
+
+</script>
+
+
   
   
  
