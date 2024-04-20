@@ -1,6 +1,6 @@
 
 <template>
-   <div id="cliente">
+   <div :class="{'cliente': !isPremium, 'cliente-premium': isPremium}">
       <h2 id="cliente-titulo" >Ficha cliente</h2>
       <h2>
          <p>Nome:  {{ cliente.nome     }}</p>
@@ -19,6 +19,7 @@ export default{
 
    data(){
       return{
+         isPremium:true
       }
    },
    props:{
@@ -32,7 +33,7 @@ export default{
 
 <style scoped>
 
-    #cliente{
+    .cliente{
         color: rgb(237, 241, 237);
         background-color: rgb(112, 114, 243);
         max-width: 20%;
@@ -43,6 +44,20 @@ export default{
         border-radius: 3%;
         box-sizing: border-box;
         width: auto;
+    }
+
+    .cliente-premium{
+      color: rgb(252, 248, 4);
+        background-color: rgb(10, 10, 10);
+        max-width: 20%;
+        height: auto;
+        padding-left: 2%;
+        padding-bottom: 2%;
+        padding-top:2%;
+        border-radius: 3%;
+        box-sizing: border-box;
+        width: auto;
+
     }
 
     #cliente-titulo{
