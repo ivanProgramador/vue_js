@@ -3,11 +3,10 @@
    <div id="cliente">
       <h2 id="cliente-titulo" >Ficha cliente</h2>
       <h2>
-         <p>Nome:     {{ nome      }}</p>
-         <p>Numero:   {{ numero    }}</p>
-         <p>E-mail:   {{ email     }}</p>
-         <p>Idade:    {{ idade     }}</p>
-         <p>Descrição:{{ descricao }}</p>
+         <p>Nome:  {{ cliente.nome     }}</p>
+         <p>E-mail:{{ cliente.email   }}</p>
+         <p>Idade: {{ cliente.idade    }}</p>
+        
       </h2>
       
    </div>
@@ -19,12 +18,13 @@ export default{
 
    data(){
       return{
-         nome:'José Silva',
-         numero:'123456',
-         email:'jose@gmail.com',
-         idade:35,
-         descricao:'Cliente premium'
       }
+   },
+   props:{
+       nome: String,
+       idade: Number,
+       email: String,
+       cliente:Object
    }
 
 }
@@ -43,6 +43,7 @@ export default{
         padding-top:2%;
         border-radius: 3%;
         box-sizing: border-box;
+        width: auto;
     }
 
     #cliente-titulo{

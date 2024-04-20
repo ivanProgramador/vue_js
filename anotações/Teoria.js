@@ -89,12 +89,66 @@ Reatividade
 
   No caso oque classfica um framwork como reativo e a capacidade dele de detectar 
   as mudanças nos dados exibidos e fazer essas alaterações imediatamente sem que o cliente 
-  precise ataualizar a pagina para ter acesso a essas atualizações.
+  precise atualizar a pagina para ter acesso a essas atualizações.
   
-  Usando um exemplo mais comun, a Netflx quando mostra um filme lanlçamento na pagina,
+  Usando um exemplo mais comun, a Netflx quando mostra um filme lançamento na pagina,
   se ele foi lançado enquanto o cliente esta vendo outros titulos no catalogo ele vai
-  aparecer na lista para o cliente porém issoi é feito sem que o restante ada pagina 
+  aparecer na lista para o cliente porém isso é feito sem que o restante ada pagina 
   precise sofrer um recarregamento para atualizar o anuncio do novo titulo.
+  
+
+  Props 
+  São variaveis que estão ligadas a composição default do componente como se fosse traibutos de uma classe,
+  digamos que eu crio um componente na view para cada cliente esse componente pode ter props baseadas no
+  cliente como nome, telefone e email, então nesse caso todos so clientes vaõ ter esses atributos mas nem 
+  todo o cliente usa o mesmo nome email ouu telefone, então ovalor das porps vai mudar conforme os dados do clinte
+  em questão.
+
+  as porps são declaradas dentro da parte de script de um componente quando se delara uma prop,
+  temos que informar que tipo de dado essa porps espera receber 
+  nome recebe -> string  , telefone receber -> Number ....
+
+  é importante sempre respeitar o tipo de dado recebido por cada prop 
+  
+  
+  -----------------------------------------------------------
+    props:{
+            nome: String,
+            telefone: Number,
+            email: String
+         }  
+   -----------------------------------------------------------
+
+   enviando valores para props nesse caso o componete cliente esta recebendo os
+   valores das props de forma direta mas existem jeitos melhores de se fazer isso    
+   
+   <ClienteComponent nome="José" email="jose@teste.com.br" telefone=33763375 />
+
+   O codigo abaio mostra como declarar porps dentro do componente
+
+  <script>
+      export default{
+
+         data(){
+            return{
+               idade:35,
+               descricao:'Cliente premium'
+            }
+         },
+         props:{
+            nome: String,
+            telefone: Number,
+            email: String
+         }
+
+      }
+
+</script>
+
+-------------------------------------------------------------------------
+  
+  
+ 
   
 
 
