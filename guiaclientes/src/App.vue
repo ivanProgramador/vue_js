@@ -3,7 +3,15 @@
 
   <h1>Guia clientes</h1>
   <hr>
-  <ClienteComponent :cliente="cliente" :showIdade="false" />
+  <div v-for="(cliente, index) in clientes" :key="cliente.id">
+    <h1>{{index + 1}}</h1>
+    <ClienteComponent :cliente="cliente" />
+
+
+  </div>
+
+
+  
 
   
 
@@ -24,7 +32,29 @@ export default {
         nome:"Maria",
         email:'maria@teste.com',
         idade:30
+      },
+      clientes:[
+      {
+        id:1,
+        nome:"Maria",
+        email:'maria@teste.com',
+        idade:30
+      },
+      {
+        id:2,
+        nome:"camila",
+        email:'camila@teste.com',
+        idade:32
+      },
+      {
+        id:3,
+        nome:"Eduardo",
+        email:'eduardo@teste.com',
+        idade:33
       }
+        
+
+      ]
     }
   },
   components:{

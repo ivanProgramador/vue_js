@@ -19,7 +19,7 @@ export default{
 
    data(){
       return{
-         isPremium:true
+         isPremium:false
       }
    },
    props:{
@@ -44,6 +44,7 @@ export default{
         border-radius: 3%;
         box-sizing: border-box;
         width: auto;
+        margin-bottom: 2%;
     }
 
     .cliente-premium{
