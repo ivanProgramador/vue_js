@@ -3,6 +3,7 @@
 
   <h1>Guia clientes</h1>
   <h3>Cadastro</h3>
+  <small id="aviso" v-show="deuErro">Nome invalido, tente novamente</small><br>
   <input type="text" name="nome" placeholder="nome" v-model="nomeField" >
   <input type="text" name="email"  placeholder="email" v-model="emailField" >
   <input type="number" name="idade"  placeholder="idade" v-model="idadeField">
@@ -35,6 +36,7 @@ export default {
   name: 'App',
   data(){
     return{
+      deuErro:false,
       nomeField:'',
       emailFiled:'',
       idadeField:0,
@@ -52,7 +54,14 @@ export default {
   },
   methods:{
     cadastrarUsuario:function(){
-       this.clientes.push(
+
+       if(this.nomeField == "" || this.nomeField ==" " || this.nomeField.length < 3){
+
+        this.deuErro =true;
+
+       }else{
+        this.deuErro =false;
+        this.clientes.push(
         {nome: this.nomeField,
          email: this.emailField,
          idade: this.idadeField,
@@ -63,11 +72,20 @@ export default {
         this.idadeField=""
         this.emailField =""
 
+       }
+       
+
+       
+
     }
   }
 }
 </script>
 
 <style>
+
+ #aviso{
+   color: red;
+ }
 
 </style>
