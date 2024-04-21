@@ -5,14 +5,13 @@
       <h2>
          <p>Nome:  {{ cliente.nome     }}</p>
          <p>E-mail:{{ cliente.email   }}</p>
-         <p v-if="showIdade == true"> Idade: {{ cliente.idade    }}</p>
-         <p v-else> Esse cliente escondeu a idade </p>
-         <button @click="mudarCor" >Mudar cor</button>
+         <p>Idade:{{ cliente.idade   }}</p>
         
+         <button @click="mudarCor" >Mudar cor</button>
       </h2>
-      
    </div>
- 
+
+
 </template>
 
 <script>
