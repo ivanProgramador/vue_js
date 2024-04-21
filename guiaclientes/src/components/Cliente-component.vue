@@ -8,6 +8,9 @@
          <p>Idade:{{ cliente.idade   }}</p>
         
          <button @click="mudarCor" >Mudar cor</button>
+
+         <!--Esse botão chama o metodo de emissão do evento parte 1 -->
+         <button @click="emitirEventoDelete">Deletar</button>
       </h2>
    </div>
 
@@ -29,6 +32,17 @@ export default{
    methods:{
       mudarCor: function(){
          this.isPremium = ! this.isPremium;
+
+      },
+      // quando esse metodo é chamado 
+      emitirEventoDelete: function(){
+         
+        console.log('emitindo do filho');
+         //parte 2
+        // ele tem a função padrão $emit que recebe o nome do evento que vai ser emitido 
+        // e qual eo o bejeto que vai ser enviado ao componente pai
+         
+        this.$emit('meDelete',{idCliente: this.cliente.id});
 
       }
    }
