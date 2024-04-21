@@ -4,7 +4,7 @@
       <h2 id="cliente-titulo" >Ficha cliente</h2>
       <h2>
          <p>Nome:  {{ cliente.nome     }}</p>
-         <p>E-mail:{{ cliente.email   }}</p>
+         <p>E-mail:{{ cliente.email }}</p>
          <p>Idade:{{ cliente.idade   }}</p>
         
          <button @click="mudarCor" >Mudar cor</button>
@@ -45,9 +45,12 @@ export default{
         this.$emit('meDelete',{idCliente: this.cliente.id});
 
       }
-   }
-
+   },
+   
+     
 }
+
+
 
 </script>
 
