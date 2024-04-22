@@ -11,6 +11,8 @@
 
          <!--Esse botão chama o metodo de emissão do evento parte 1 -->
          <button @click="emitirEventoDelete">Deletar</button>
+
+         <h4>ID especial {{ idEspecial }}</h4>
       </h2>
    </div>
 
@@ -46,6 +48,11 @@ export default{
 
       }
    },
+   computed:{
+       idEspecial:function(){
+          return(this.cliente.email + this.cliente.nome + this.cliente.id).toUpperCase(); 
+       }
+   }
    
      
 }
