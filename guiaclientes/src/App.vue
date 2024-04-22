@@ -12,7 +12,7 @@
 
 
   <hr>
-  <div v-for="(cliente, index) in clientes" :key="cliente.id">
+  <div v-for="(cliente, index) in oclientes" :key="cliente.id">
     <h1>{{index + 1}}</h1>
     <!--Parte 3 
 
@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import _ from 'lodash';
+
 import ClienteComponent from './components/Cliente-component.vue';
 
 
@@ -52,7 +54,23 @@ export default {
         email:'maria@teste.com',
         idade:30
       },
-      clientes:[]
+      clientes:[
+      {
+        nome:"carla",
+        email:'carla@teste.com',
+        idade:30
+      },
+      {
+        nome:"Amanda",
+        email:'amanda@teste.com',
+        idade:30
+      },
+      {
+        nome:"Bruna",
+        email:'bruna@teste.com',
+        idade:30
+      }
+      ]
     }
   },
   components:{
@@ -60,6 +78,7 @@ export default {
    
   },
   methods:{
+
     cadastrarUsuario:function(){
 
        if(this.nomeField == "" || this.nomeField ==" " || this.nomeField.length < 3){
@@ -102,7 +121,13 @@ export default {
         this.clientes = novoArray;
           
        }
-  }
+  },
+       computed:{
+         oclientes: function(){
+            return _.orderBy(this.clientes,['nome'],['asc']);
+   
+         }
+       }
 }
 </script>
 

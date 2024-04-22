@@ -43,5 +43,58 @@
    </div>
 
 
+As computed propriets tamebme servem para aplicar biblioteacas em elementos
+
+
+por exemplo a lodash é um biblioteca co varias classes uteis nesse caso eu usei uma computade porprieti 
+para ordernar os objetos por nome de forma ascendente aqui eu uso a função oderBy que recebe o array clientes 
+e gera outro array com os nomes ordenados em ordem alfabetica.  
+
+ computed:{
+         oclientes: function(){
+            return _.orderBy(this.clientes,['nome'],['asc']);
+   
+         }
+       }
+
+
+exibindo o novo array ordenado
+
+<template>
+ <div id="App">
+
+  <h1>Guia clientes</h1>
+  <h3>Cadastro</h3>
+  <small id="aviso" v-show="deuErro">Nome invalido, tente novamente</small><br>
+  <input type="text" name="nome" placeholder="nome" v-model="nomeField" >
+  <input type="text" name="email"  placeholder="email" v-model="emailField" >
+  <input type="number" name="idade"  placeholder="idade" v-model="idadeField">
+  <button @click="cadastrarUsuario" >Cadastrar</button>
+ 
+
+
+  <hr>
+  <div v-for="(cliente, index) in oclientes" :key="cliente.id"> <- aqui
+    <h1>{{index + 1}}</h1>
+    <!--Parte 3 
+
+        quando chega aqui no componete pai para ser lido o evento emitido
+        tem que ser passado ao componete atraves  dessa sintaxe @meDelete="deletarUsuario"
+        como se ele fosse uma props
+    -->
+    <ClienteComponent :cliente="cliente" @meDelete="deletarUsuario" />
+
+
+  </div>
+
+
+  
+
+  
+
+ </div>
+</template>
+
+
 
 */
