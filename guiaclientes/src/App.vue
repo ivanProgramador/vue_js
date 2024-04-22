@@ -1,13 +1,18 @@
 <template>
- <div id="App">
+ <div  id="App">
 
   <h1>Guia clientes</h1>
   <h3>Cadastro</h3>
-  <small id="aviso" v-show="deuErro">Nome invalido, tente novamente</small><br>
-  <input type="text" name="nome" placeholder="nome" v-model="nomeField" >
-  <input type="text" name="email"  placeholder="email" v-model="emailField" >
-  <input type="number" name="idade"  placeholder="idade" v-model="idadeField">
-  <button @click="cadastrarUsuario" >Cadastrar</button>
+
+  <div class="field" >
+      <small id="aviso" v-show="deuErro">Nome invalido, tente novamente</small><br>
+
+      <input class="input is-small" type="text" name="nome" placeholder="nome" v-model="nomeField" >
+      <input  class="input is-small" type="text" name="email"  placeholder="email" v-model="emailField" >
+      <input  class="input is-small" type="number" name="idade"  placeholder="idade" v-model="idadeField">
+      
+      <button @click="cadastrarUsuario" >Cadastrar</button>
+  </div>
  
 
 
